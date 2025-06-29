@@ -1,6 +1,5 @@
 # Tweeter_speech_classification
-A test models on dectecting what catergories certain words falls under.
-Here's an excellent README file for your Text Classification Flask API project, designed for clarity, ease of use, and quick understanding on GitHub.
+A test models 
 
 -----
 
@@ -23,7 +22,6 @@ This project provides a simple yet effective **REST API** built with **Flask** f
       - [`/predict`](https://www.google.com/search?q=%23predict)
   - [Training Your Model (Optional)](https://www.google.com/search?q=%23training-your-model-optional)
   - [Contributing](https://www.google.com/search?q=%23contributing)
-  - [License](https://www.google.com/search?q=%23license)
 
 ## Features
 
