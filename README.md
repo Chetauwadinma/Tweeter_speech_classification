@@ -117,21 +117,15 @@ The API currently exposes one primary endpoint for classification.
   * **Request Body (JSON):**
     ```json
     {
-        "text": "This is an example sentence to classify."
+        "text": "she is gay."
     }
     ```
   * **Success Response (200 OK):**
     ```json
     {
-        "prediction": "positive"
-        // or whatever your model's output format is, e.g., [0], [1]
-    }
-    ```
-  * **Error Responses (400 Bad Request, 500 Internal Server Error):**
-    ```json
-    {
-        "error": "Error message details"
-    }
+        "prediction": "offensive"
+    
+    
     ```
   * **Example using `curl`:**
     ```bash
@@ -152,28 +146,30 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import pickle
 
-# 1. Load your dataset (e.g., CSV with 'text' and 'label' columns)
+# 1. Load your dataset (df = pd.read_csv(r"C:\Users\HomePC\Pictures\speechclf.csv"))
 # For demonstration:
-data = {
-    'text': [
-        "This is a great product.",
-        "I hate this, it's terrible.",
-        "Absolutely amazing!",
-        "Could be better, quite disappointing.",
-        "Fantastic service and quality."
-    ],
-    'label': [
-        "positive",
-        "negative",
-        "positive",
-        "negative",
-        "positive"
-    ]
+        
+      <th>class</th>
+      <th>tweet</th>
+
+      <td>!!! RT @mayasolovely: As a woman you shouldn't...</td>
+      <td>offensive</td>
+      <td>!!!!! RT @mleew17: boy dats cold...tyga dwn ba...</td>
+      <td>offensive</td>
+      <td>!!!!!!! RT @UrKindOfBrand Dawg!!!! RT @80sbaby...</td>
+    <
+      <th>3</th>
+      <td>offensive</td>
+      <td>!!!!!!!!! RT @C_G_Anderson: @viva_based she lo...</td>
+    
+      <td>offensive</td>
+      <td>!!!!!!!!!!!!! RT @ShenikaRoberts: The shit you...</td>
+    
 }
 df = pd.DataFrame(data)
 
-X = df['text']
-y = df['label']
+X = df['class']
+y = df['tweet']
 
 # 2. Split data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
